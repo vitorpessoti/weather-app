@@ -1,4 +1,4 @@
 module.exports = app => {
-    app.route('/testing')
-        .get(app.controllers.weather.testing)
+    app.route('/geocoding')
+        .get(app.controllers.geocoding.index)
 }

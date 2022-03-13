@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 
 consign()
-    .include('./config/routes.js')
-    .then('./controllers')
+    .include('./controllers')
+    .then('./config/routes.js')
     .into(app);
 
-const server = app.listen(port, () => console.log(`Server up and listening at ${port}`));
+const server = app.listen(process.env.APP_PORT, () => console.log(`Server up and listening at ${process.env.APP_PORT}`));
