@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/components/current-day.dart';
 import 'package:mobile/components/current-weather-info.dart';
 import 'package:mobile/components/daily-forecast.dart';
+import 'package:mobile/components/hourly-forecast.dart';
 import 'package:mobile/components/subtitles.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,19 +20,153 @@ class HomePage extends StatelessWidget {
       {'title': 'UV index', 'icon': 'sun', 'value': '5 /10'},
     ];
 
+    final List<Map<String, String>> dailyForecast = [
+      {
+        'weekDay': 'Tue',
+        'monthDay': '15',
+        'icon': 'light-rain',
+        'tempMax': '26',
+        'tempMin': '20'
+      },
+      {
+        'weekDay': 'Wed',
+        'monthDay': '16',
+        'icon': 'sun',
+        'tempMax': '27',
+        'tempMin': '20'
+      },
+      {
+        'weekDay': 'Thu',
+        'monthDay': '17',
+        'icon': 'sun',
+        'tempMax': '28',
+        'tempMin': '20'
+      },
+      {
+        'weekDay': 'Fri',
+        'monthDay': '18',
+        'icon': 'storm-with-heavy-rain',
+        'tempMax': '25',
+        'tempMin': '19'
+      },
+      {
+        'weekDay': 'Sat',
+        'monthDay': '19',
+        'icon': 'heavy-rain',
+        'tempMax': '24',
+        'tempMin': '18'
+      },
+      {
+        'weekDay': 'Sun',
+        'monthDay': '20',
+        'icon': 'cloud-lightning',
+        'tempMax': '25',
+        'tempMin': '19'
+      },
+      {
+        'weekDay': 'Mon',
+        'monthDay': '21',
+        'icon': 'cloud',
+        'tempMax': '26',
+        'tempMin': '19'
+      },
+    ];
+
+    final List<Map<String, String>> hourlyForecast = [
+      {
+        'hour': '7',
+        'ampm': 'PM',
+        'icon': 'light-rain',
+        'temp': '20',
+      },
+      {
+        'hour': '8',
+        'ampm': 'PM',
+        'icon': 'light-rain',
+        'temp': '20',
+      },
+      {
+        'hour': '9',
+        'ampm': 'PM',
+        'icon': 'light-rain',
+        'temp': '19',
+      },
+      {
+        'hour': '10',
+        'ampm': 'PM',
+        'icon': 'light-rain',
+        'temp': '19',
+      },
+      {
+        'hour': '11',
+        'ampm': 'PM',
+        'icon': 'light-rain',
+        'temp': '19',
+      },
+      {
+        'hour': '12',
+        'ampm': 'AM',
+        'icon': 'light-rain',
+        'temp': '18',
+      },
+      {
+        'hour': '1',
+        'ampm': 'AM',
+        'icon': 'light-rain',
+        'temp': '18',
+      },
+      {
+        'hour': '2',
+        'ampm': 'AM',
+        'icon': 'light-rain',
+        'temp': '18',
+      },
+      {
+        'hour': '3',
+        'ampm': 'AM',
+        'icon': 'light-rain',
+        'temp': '18',
+      },
+      {
+        'hour': '4',
+        'ampm': 'AM',
+        'icon': 'light-rain',
+        'temp': '18',
+      },
+      {
+        'hour': '5',
+        'ampm': 'AM',
+        'icon': 'cloud',
+        'temp': '18',
+      },
+      {
+        'hour': '6',
+        'ampm': 'AM',
+        'icon': 'cloud',
+        'temp': '18',
+      },
+    ];
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
             expandedHeight: 400,
             pinned: true,
-            title: Text('São Paulo, Brazil'),
+            title: Container(
+              padding: const EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(0, 0, 0, 0.5),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Text('São Paulo, Brazil'),
+            ),
             titleTextStyle: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
             ),
             centerTitle: true,
-            collapsedHeight: 120,
+            collapsedHeight: 175,
             flexibleSpace: Stack(
               children: [
                 Positioned.fill(
@@ -41,25 +177,36 @@ class HomePage extends StatelessWidget {
                 ),
                 Positioned.fill(
                   child: Align(
-                    alignment: Alignment.bottomLeft,
+                    alignment: Alignment.bottomCenter,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            '20ºC',
-                            style: TextStyle(
-                              fontSize: 50,
-                              color: Colors.white,
+                          Container(
+                            padding: const EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(0, 0, 0, 0.5),
+                              borderRadius: BorderRadius.circular(5),
                             ),
-                          ),
-                          Text(
-                            'Rain',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
+                            child: Column(
+                              children: [
+                                Text(
+                                  '20ºC',
+                                  style: TextStyle(
+                                    fontSize: 50,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Rain',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           DecoratedBox(
@@ -89,36 +236,12 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Monday, March 14, 8:00 PM'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    RichText(
-                      text: TextSpan(
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.black,
-                        ),
-                        children: [
-                          TextSpan(text: 'Max '),
-                          TextSpan(
-                            text: '24º',
-                            style: TextStyle(
-                              fontSize: 24,
-                            ),
-                          ),
-                          TextSpan(text: 'Min '),
-                          TextSpan(
-                            text: '18º',
-                            style: TextStyle(
-                              fontSize: 24,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Subtitles('Daily'),
-                    DailyForecast(),
+                    Text('Monday, March 14, 6:00 PM'),
+                    CurrentDay(),
+                    Subtitles('Hourly forecast'),
+                    HourlyForecast(hourlyForecast),
+                    Subtitles('Daily forecast'),
+                    DailyForecast(dailyForecast),
                     Subtitles('Current weather info'),
                     SizedBox(
                       height: 400,
