@@ -4,148 +4,156 @@ import 'package:mobile/components/current-weather-info.dart';
 import 'package:mobile/components/daily-forecast.dart';
 import 'package:mobile/components/hourly-forecast.dart';
 import 'package:mobile/components/subtitles.dart';
+import 'package:mobile/data/dummy-data.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, String>> currentWeather = [
-      {'title': 'Feels like', 'icon': 'feels-like', 'value': '21 ºC'},
-      {'title': 'Precipitation', 'icon': 'precipitation', 'value': '0.3 mm'},
-      {'title': 'Wind', 'icon': 'wind', 'value': '10 km/h'},
-      {'title': 'Pressure', 'icon': 'pressure', 'value': '1000 hPa'},
-      {'title': 'Humidity', 'icon': 'humidity', 'value': '85 %'},
-      {'title': 'Dew point', 'icon': 'dew-point', 'value': '19 ºC'},
-      {'title': 'UV index', 'icon': 'sun', 'value': '5 /10'},
-    ];
+    // final List<Map<String, String>> currentWeather = [
+    //   {'title': 'Feels like', 'icon': 'feels-like', 'value': '21 ºC'},
+    //   {'title': 'Precipitation', 'icon': 'precipitation', 'value': '0.3 mm'},
+    //   {'title': 'Wind', 'icon': 'wind', 'value': '10 km/h'},
+    //   {'title': 'Pressure', 'icon': 'pressure', 'value': '1000 hPa'},
+    //   {'title': 'Humidity', 'icon': 'humidity', 'value': '85 %'},
+    //   {'title': 'Dew point', 'icon': 'dew-point', 'value': '19 ºC'},
+    //   {'title': 'UV index', 'icon': 'sun', 'value': '5 /10'},
+    // ];
 
-    final List<Map<String, String>> dailyForecast = [
-      {
-        'weekDay': 'Tue',
-        'monthDay': '15',
-        'icon': 'light-rain',
-        'tempMax': '26',
-        'tempMin': '20'
-      },
-      {
-        'weekDay': 'Wed',
-        'monthDay': '16',
-        'icon': 'sun',
-        'tempMax': '27',
-        'tempMin': '20'
-      },
-      {
-        'weekDay': 'Thu',
-        'monthDay': '17',
-        'icon': 'sun',
-        'tempMax': '28',
-        'tempMin': '20'
-      },
-      {
-        'weekDay': 'Fri',
-        'monthDay': '18',
-        'icon': 'storm-with-heavy-rain',
-        'tempMax': '25',
-        'tempMin': '19'
-      },
-      {
-        'weekDay': 'Sat',
-        'monthDay': '19',
-        'icon': 'heavy-rain',
-        'tempMax': '24',
-        'tempMin': '18'
-      },
-      {
-        'weekDay': 'Sun',
-        'monthDay': '20',
-        'icon': 'cloud-lightning',
-        'tempMax': '25',
-        'tempMin': '19'
-      },
-      {
-        'weekDay': 'Mon',
-        'monthDay': '21',
-        'icon': 'cloud',
-        'tempMax': '26',
-        'tempMin': '19'
-      },
-    ];
+    final currentWeatherDetails = DUMMY_DAYS
+        .where((day) {
+          return day.month == 3 && day.day == 16;
+        })
+        .first
+        .weatherDetails;
 
-    final List<Map<String, String>> hourlyForecast = [
-      {
-        'hour': '7',
-        'ampm': 'PM',
-        'icon': 'light-rain',
-        'temp': '20',
-      },
-      {
-        'hour': '8',
-        'ampm': 'PM',
-        'icon': 'light-rain',
-        'temp': '20',
-      },
-      {
-        'hour': '9',
-        'ampm': 'PM',
-        'icon': 'light-rain',
-        'temp': '19',
-      },
-      {
-        'hour': '10',
-        'ampm': 'PM',
-        'icon': 'light-rain',
-        'temp': '19',
-      },
-      {
-        'hour': '11',
-        'ampm': 'PM',
-        'icon': 'light-rain',
-        'temp': '19',
-      },
-      {
-        'hour': '12',
-        'ampm': 'AM',
-        'icon': 'light-rain',
-        'temp': '18',
-      },
-      {
-        'hour': '1',
-        'ampm': 'AM',
-        'icon': 'light-rain',
-        'temp': '18',
-      },
-      {
-        'hour': '2',
-        'ampm': 'AM',
-        'icon': 'light-rain',
-        'temp': '18',
-      },
-      {
-        'hour': '3',
-        'ampm': 'AM',
-        'icon': 'light-rain',
-        'temp': '18',
-      },
-      {
-        'hour': '4',
-        'ampm': 'AM',
-        'icon': 'light-rain',
-        'temp': '18',
-      },
-      {
-        'hour': '5',
-        'ampm': 'AM',
-        'icon': 'cloud',
-        'temp': '18',
-      },
-      {
-        'hour': '6',
-        'ampm': 'AM',
-        'icon': 'cloud',
-        'temp': '18',
-      },
-    ];
+    // final List<Map<String, String>> dailyForecast = [
+    //   {
+    //     'weekDay': 'Tue',
+    //     'monthDay': '15',
+    //     'icon': 'light-rain',
+    //     'tempMax': '26',
+    //     'tempMin': '20'
+    //   },
+    //   {
+    //     'weekDay': 'Wed',
+    //     'monthDay': '16',
+    //     'icon': 'sun',
+    //     'tempMax': '27',
+    //     'tempMin': '20'
+    //   },
+    //   {
+    //     'weekDay': 'Thu',
+    //     'monthDay': '17',
+    //     'icon': 'sun',
+    //     'tempMax': '28',
+    //     'tempMin': '20'
+    //   },
+    //   {
+    //     'weekDay': 'Fri',
+    //     'monthDay': '18',
+    //     'icon': 'storm-with-heavy-rain',
+    //     'tempMax': '25',
+    //     'tempMin': '19'
+    //   },
+    //   {
+    //     'weekDay': 'Sat',
+    //     'monthDay': '19',
+    //     'icon': 'heavy-rain',
+    //     'tempMax': '24',
+    //     'tempMin': '18'
+    //   },
+    //   {
+    //     'weekDay': 'Sun',
+    //     'monthDay': '20',
+    //     'icon': 'cloud-lightning',
+    //     'tempMax': '25',
+    //     'tempMin': '19'
+    //   },
+    //   {
+    //     'weekDay': 'Mon',
+    //     'monthDay': '21',
+    //     'icon': 'cloud',
+    //     'tempMax': '26',
+    //     'tempMin': '19'
+    //   },
+    // ];
+
+    // final List<Map<String, String>> hourlyForecast = [
+    //   {
+    //     'hour': '7',
+    //     'ampm': 'PM',
+    //     'icon': 'light-rain',
+    //     'temp': '20',
+    //   },
+    //   {
+    //     'hour': '8',
+    //     'ampm': 'PM',
+    //     'icon': 'light-rain',
+    //     'temp': '20',
+    //   },
+    //   {
+    //     'hour': '9',
+    //     'ampm': 'PM',
+    //     'icon': 'light-rain',
+    //     'temp': '19',
+    //   },
+    //   {
+    //     'hour': '10',
+    //     'ampm': 'PM',
+    //     'icon': 'light-rain',
+    //     'temp': '19',
+    //   },
+    //   {
+    //     'hour': '11',
+    //     'ampm': 'PM',
+    //     'icon': 'light-rain',
+    //     'temp': '19',
+    //   },
+    //   {
+    //     'hour': '12',
+    //     'ampm': 'AM',
+    //     'icon': 'light-rain',
+    //     'temp': '18',
+    //   },
+    //   {
+    //     'hour': '1',
+    //     'ampm': 'AM',
+    //     'icon': 'light-rain',
+    //     'temp': '18',
+    //   },
+    //   {
+    //     'hour': '2',
+    //     'ampm': 'AM',
+    //     'icon': 'light-rain',
+    //     'temp': '18',
+    //   },
+    //   {
+    //     'hour': '3',
+    //     'ampm': 'AM',
+    //     'icon': 'light-rain',
+    //     'temp': '18',
+    //   },
+    //   {
+    //     'hour': '4',
+    //     'ampm': 'AM',
+    //     'icon': 'light-rain',
+    //     'temp': '18',
+    //   },
+    //   {
+    //     'hour': '5',
+    //     'ampm': 'AM',
+    //     'icon': 'cloud',
+    //     'temp': '18',
+    //   },
+    //   {
+    //     'hour': '6',
+    //     'ampm': 'AM',
+    //     'icon': 'cloud',
+    //     'temp': '18',
+    //   },
+    // ];
 
     return Scaffold(
       body: CustomScrollView(
@@ -239,24 +247,25 @@ class HomePage extends StatelessWidget {
                     Text('Monday, March 14, 6:00 PM'),
                     CurrentDay(),
                     Subtitles('Hourly forecast'),
-                    HourlyForecast(hourlyForecast),
+                    HourlyForecast(DUMMY_HOURS),
                     Subtitles('Daily forecast'),
-                    DailyForecast(dailyForecast),
+                    DailyForecast(DUMMY_DAYS),
                     Subtitles('Current weather info'),
-                    SizedBox(
-                      height: 400,
-                      child: GridView.builder(
-                        itemCount: currentWeather.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          childAspectRatio: 3 / 2.6,
-                          crossAxisSpacing: 5,
-                          mainAxisSpacing: 5,
-                        ),
-                        itemBuilder: (context, index) =>
-                            CurrentWeatherInfo(currentWeather[index]),
-                      ),
-                    ),
+                    CurrentWeatherInfo(currentWeatherDetails),
+                    // SizedBox(
+                    //   height: 400,
+                    //   child: GridView.builder(
+                    //     itemCount: currentWeather.length,
+                    //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    //       crossAxisCount: 3,
+                    //       childAspectRatio: 3 / 2.6,
+                    //       crossAxisSpacing: 5,
+                    //       mainAxisSpacing: 5,
+                    //     ),
+                    //     itemBuilder: (context, index) =>
+                    //         CurrentWeatherInfo(currentWeather[index]),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

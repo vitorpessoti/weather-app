@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/models/hour.dart';
 
 class HourlyForecastItem extends StatelessWidget {
-  final Map<String, String> item;
+  final Hour item;
   const HourlyForecastItem(this.item);
 
   @override
@@ -17,19 +18,19 @@ class HourlyForecastItem extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Text('${item['hour']} ${item['ampm']}'),
+            child: Text('${item.hour.toString()} ${item.ampm}'),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Image.asset(
-              'assets/in_app_icons/${item['icon']}.png',
+              'assets/in_app_icons/${item.icon}.png',
               width: 30,
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Text(
-              '${item['temp']}º',
+              '${item.temp.toString()}º',
               style: TextStyle(fontSize: 20),
             ),
           )

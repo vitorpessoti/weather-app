@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/pages/daily-forecast-details-page.dart';
 import 'package:mobile/pages/home-page.dart';
 import 'package:mobile/utils/app-routes.dart';
 
@@ -44,6 +45,7 @@ class WeatherApp extends StatelessWidget {
       ),
       routes: {
         AppRoutes.HOME: (ctx) => HomePage(),
+        // AppRoutes.DAILY_FORECAST: (ctx) => DailyForecastDetailsPage(),
       },
     );
   }

@@ -1,0 +1,33 @@
+import 'package:mobile/models/weather-details.dart';
+
+class Day {
+  final int month;
+  final int day;
+  final String weekDay;
+  final String icon;
+  final int tempMax;
+  final int tempMin;
+  // final double precipitation;
+  // final int wind;
+  // final int pressure;
+  // final int humidity;
+  // final int dewPoint;
+  // final int uvIndex;
+  final List<WeatherDetails> weatherDetails;
+
+  const Day({
+    required this.month,
+    required this.day,
+    required this.weekDay,
+    required this.icon,
+    required this.tempMax,
+    required this.tempMin,
+    // required this.precipitation,
+    // required this.wind,
+    // required this.pressure,
+    // required this.humidity,
+    // required this.dewPoint,
+    // required this.uvIndex,
+    required this.weatherDetails,
+  });
+}

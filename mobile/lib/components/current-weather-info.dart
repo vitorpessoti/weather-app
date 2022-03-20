@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/components/current-weather-info-item.dart';
+import 'package:mobile/models/weather-details.dart';
 
 class CurrentWeatherInfo extends StatelessWidget {
-  final Map<String, String> item;
+  final List<WeatherDetails> item;
   const CurrentWeatherInfo(this.item);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      child: Container(
-        child: Column(
-          children: [
-            Image.asset('assets/in_app_icons/${item['icon']}.png'),
-            Text(item['title']!),
-            Text(
-              item['value']!,
-              style: TextStyle(fontSize: 20),
-            )
-          ],
+    return SizedBox(
+      height: 400,
+      child: GridView.builder(
+        itemCount: item.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 3 / 2.6,
+          crossAxisSpacing: 5,
+          mainAxisSpacing: 5,
         ),
+        itemBuilder: (context, index) =>
+            CurrentWeatherInfoItem(details: item[index]),
       ),
     );
   }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/daily-forecast-item.dart';
+import 'package:mobile/models/day.dart';
 
 class DailyForecast extends StatelessWidget {
-  final List<Map<String, String>> forecasts;
+  final List<Day> forecasts;
   const DailyForecast(this.forecasts);
 
   @override
