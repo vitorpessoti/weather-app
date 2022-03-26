@@ -5,6 +5,7 @@ import 'package:mobile/components/daily-forecast.dart';
 import 'package:mobile/components/hourly-forecast.dart';
 import 'package:mobile/components/subtitles.dart';
 import 'package:mobile/data/dummy-data.dart';
+import 'package:mobile/utils/app-routes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -159,6 +160,13 @@ class HomePage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            actions: [
+              IconButton(
+                onPressed: () =>
+                    Navigator.of(context).pushNamed(AppRoutes.SEARCH_PAGE),
+                icon: Icon(Icons.search),
+              ),
+            ],
             expandedHeight: 400,
             pinned: true,
             title: Container(
