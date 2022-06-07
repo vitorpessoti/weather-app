@@ -1,7 +1,16 @@
 module.exports = app => {
     app.route('/geocoding')
-        .get(app.controllers.geocoding.index)
+        .post(app.controllers.geocoding.index)
+
+    app.route('/geocoding/namePrefix')
+        .post(app.controllers.geocoding.namePrefix)
+
+    app.route('/geocoding/latLong')
+        .post(app.controllers.geocoding.latLong)
 
     app.route('/realtime')
-        .get(app.controllers.weather.realtime)
+        .post(app.controllers.weather.realtime)
+
+    app.route('/onecall')
+        .post(app.controllers.weather.onecall)
 }

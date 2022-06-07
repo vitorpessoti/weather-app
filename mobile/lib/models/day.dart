@@ -5,6 +5,8 @@ class Day {
   final int day;
   final String weekDay;
   final String icon;
+  final String weather;
+  final int currentTemp;
   final int tempMax;
   final int tempMin;
   // final double precipitation;
@@ -20,6 +22,8 @@ class Day {
     required this.day,
     required this.weekDay,
     required this.icon,
+    required this.weather,
+    required this.currentTemp,
     required this.tempMax,
     required this.tempMin,
     // required this.precipitation,

@@ -18,7 +18,7 @@ class HourlyForecastDetailsItem extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Text('${item.hour.toString()} ${item.ampm}'),
+          Text(item.hour),
           Spacer(),
           Image.asset('assets/in_app_icons/feels-like.png', width: 24),
           Text('${item.temp.toString()}ºC'),

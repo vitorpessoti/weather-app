@@ -11,19 +11,24 @@ class HourlyForecastItem extends StatelessWidget {
       width: 50.0,
       margin: EdgeInsets.all(2),
       decoration: BoxDecoration(
-        color: Colors.teal.shade50,
+        // color: Colors.teal,
         borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: Colors.white,
+          style: BorderStyle.solid,
+          width: 1.0,
+        ),
       ),
       child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Text('${item.hour.toString()} ${item.ampm}'),
+            child: Text(item.hour),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Image.asset(
-              'assets/in_app_icons/${item.icon}.png',
+            child: Image.network(
+              'http://openweathermap.org/img/wn/${item.icon}@2x.png',
               width: 30,
             ),
           ),

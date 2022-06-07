@@ -10,7 +10,7 @@ class CurrentWeatherInfoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2,
+      color: Colors.blue.shade400,
       child: Container(
         child: Column(
           children: [

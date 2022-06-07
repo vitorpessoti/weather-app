@@ -12,4 +12,6 @@ consign()
     .then('./config/routes.js')
     .into(app);
 
-const server = app.listen(process.env.APP_PORT, () => console.log(`Server up and listening at ${process.env.APP_PORT}`));
+const server = app.listen(process.env.APP_PORT, "192.168.1.6", () => {
+    console.log(`Server up and listening at ${process.env.APP_PORT}`)
+});

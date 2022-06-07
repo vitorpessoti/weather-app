@@ -10,6 +10,8 @@ const DUMMY_DAYS = [
     day: 16,
     weekDay: 'Wednesday',
     icon: 'sun',
+    weather: 'Clear',
+    currentTemp: 23,
     tempMax: 28,
     tempMin: 20,
     weatherDetails: [
@@ -35,6 +37,8 @@ const DUMMY_DAYS = [
     day: 17,
     weekDay: 'Thursday',
     icon: 'sun',
+    weather: 'Clear',
+    currentTemp: 23,
     tempMax: 28,
     tempMin: 20,
     weatherDetails: [
@@ -60,6 +64,8 @@ const DUMMY_DAYS = [
     day: 18,
     weekDay: 'Friday',
     icon: 'cloud',
+    weather: 'Clear',
+    currentTemp: 23,
     tempMax: 27,
     tempMin: 20,
     weatherDetails: [
@@ -85,6 +91,8 @@ const DUMMY_DAYS = [
     day: 19,
     weekDay: 'Saturday',
     icon: 'cloud-lightning',
+    weather: 'Clear',
+    currentTemp: 23,
     tempMax: 26,
     tempMin: 20,
     weatherDetails: [
@@ -110,6 +118,8 @@ const DUMMY_DAYS = [
     day: 20,
     weekDay: 'Sunday',
     icon: 'heavy-rain',
+    weather: 'Clear',
+    currentTemp: 23,
     tempMax: 25,
     tempMin: 19,
     weatherDetails: [
@@ -135,6 +145,8 @@ const DUMMY_DAYS = [
     day: 21,
     weekDay: 'Monday',
     icon: 'storm-with-heavy-rain',
+    weather: 'Clear',
+    currentTemp: 23,
     tempMax: 24,
     tempMin: 18,
     weatherDetails: [
@@ -160,6 +172,8 @@ const DUMMY_DAYS = [
     day: 22,
     weekDay: 'Tuesday',
     icon: 'heavy-rain',
+    weather: 'Clear',
+    currentTemp: 23,
     tempMax: 22,
     tempMin: 16,
     weatherDetails: [
@@ -237,8 +251,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 12,
-    ampm: 'AM',
+    hour: '12',
     icon: 'light-rain',
     temp: 20,
     humidity: 90,
@@ -247,8 +260,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 1,
-    ampm: 'AM',
+    hour: '1',
     icon: 'light-rain',
     temp: 20,
     humidity: 90,
@@ -257,8 +269,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 2,
-    ampm: 'AM',
+    hour: '2',
     icon: 'light-rain',
     temp: 20,
     humidity: 90,
@@ -267,8 +278,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 3,
-    ampm: 'AM',
+    hour: '3',
     icon: 'light-rain',
     temp: 20,
     humidity: 90,
@@ -277,8 +287,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 4,
-    ampm: 'AM',
+    hour: '4',
     icon: 'light-rain',
     temp: 20,
     humidity: 90,
@@ -287,8 +296,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 5,
-    ampm: 'AM',
+    hour: '5',
     icon: 'light-rain',
     temp: 20,
     humidity: 90,
@@ -297,8 +305,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 6,
-    ampm: 'AM',
+    hour: '6',
     icon: 'light-rain',
     temp: 20,
     humidity: 85,
@@ -307,8 +314,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 7,
-    ampm: 'AM',
+    hour: '7',
     icon: 'sun',
     temp: 20,
     humidity: 85,
@@ -317,8 +323,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 8,
-    ampm: 'AM',
+    hour: '8',
     icon: 'sun',
     temp: 21,
     humidity: 85,
@@ -327,8 +332,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 9,
-    ampm: 'AM',
+    hour: '9',
     icon: 'sun',
     temp: 23,
     humidity: 85,
@@ -337,8 +341,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 10,
-    ampm: 'AM',
+    hour: '10',
     icon: 'sun',
     temp: 23,
     humidity: 80,
@@ -347,8 +350,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 11,
-    ampm: 'AM',
+    hour: '11',
     icon: 'sun',
     temp: 25,
     humidity: 80,
@@ -357,8 +359,7 @@ const DUMMY_HOURS = [
   Hour(
     month: 3,
     day: 16,
-    hour: 12,
-    ampm: 'PM',
+    hour: '12',
     icon: 'sun',
     temp: 27,
     humidity: 80,

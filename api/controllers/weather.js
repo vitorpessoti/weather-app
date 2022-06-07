@@ -21,6 +21,8 @@ const realtime = async (req, res) => {
             name: data.name
         }
 
+        console.log(response);
+
         return res.status(200).json({
             status: true,
             message: 'Request successfully.',
@@ -36,6 +38,28 @@ const realtime = async (req, res) => {
     }
 }
 
+const onecall = async (req, res) => {
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${req.body.latitude}&lon=${req.body.longitude}&exclude=alerts,minutely&units=${req.body.units}&appid=${process.env.API_KEY}`;
+        const apiResponse = await fetch(url);
+        const data = await apiResponse.json();
+
+        return res.status(200).json({
+            status: true,
+            message: 'Request successfully.',
+            item: data
+        });
+    } catch (error) {
+        console.log(error)
+        return res.status(400).json({
+            status: false,
+            message: 'An error has occurred.',
+            item: error
+        })
+    }
+}
+
 module.exports = {
-    realtime: realtime
+    realtime: realtime,
+    onecall: onecall
 }
