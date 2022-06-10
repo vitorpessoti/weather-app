@@ -12,18 +12,19 @@ class CurrentDay extends StatelessWidget {
       text: TextSpan(
         style: TextStyle(
           fontSize: 14.0,
+          color: Colors.white,
         ),
         children: [
           TextSpan(text: 'Max '),
           TextSpan(
-            text: day != null ? '${day!.tempMax}º' : '24',
+            text: '${day!.tempMax}º',
             style: TextStyle(
               fontSize: 24,
             ),
           ),
           TextSpan(text: 'Min '),
           TextSpan(
-            text: day != null ? '${day!.tempMin}º' : '18',
+            text: '${day!.tempMin}º',
             style: TextStyle(
               fontSize: 24,
             ),

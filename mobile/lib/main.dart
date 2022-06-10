@@ -57,7 +57,6 @@ class WeatherApp extends StatelessWidget {
         themeMode: ThemeMode.dark,
         routes: {
           AppRoutes.WELCOME_PAGE: (ctx) => WelcomePage(),
-          // AppRoutes.HOME: (ctx) => HomePage(),
           AppRoutes.SEARCH_PAGE: (ctx) => SearchPlacesPage(),
         },
       ),

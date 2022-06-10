@@ -22,7 +22,7 @@ class HourlyForecastItem extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(2.0),
             child: Text(item.hour),
           ),
           Padding(

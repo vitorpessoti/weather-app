@@ -22,7 +22,7 @@ class SearchItem extends StatelessWidget {
         width: 50.0,
         margin: EdgeInsets.all(2),
         decoration: BoxDecoration(
-          color: Colors.teal.shade50,
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(5),
         ),
         child: Padding(
