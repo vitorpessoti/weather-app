@@ -69,6 +69,9 @@ class WeatherProvider with ChangeNotifier {
         currentTemp: responseData['item']['current']['temp'].toInt(),
         tempMax: responseData['item']['daily'][0]['temp']['max'].toInt(),
         tempMin: responseData['item']['daily'][0]['temp']['min'].toInt(),
+        currentTime: responseData['item']['current']['dt'],
+        sunrise: responseData['item']['current']['sunrise'],
+        sunset: responseData['item']['current']['sunset'],
         weatherDetails: [
           WeatherDetails(
               title: 'Feels like',
@@ -125,6 +128,9 @@ class WeatherProvider with ChangeNotifier {
           currentTemp: element['temp']['day'].toInt(),
           tempMax: element['temp']['max'].toInt(),
           tempMin: element['temp']['min'].toInt(),
+          currentTime: element['dt'],
+          sunrise: element['sunrise'],
+          sunset: element['sunset'],
           weatherDetails: [],
         ));
       });

@@ -14,6 +14,9 @@ const DUMMY_DAYS = [
     currentTemp: 23,
     tempMax: 28,
     tempMin: 20,
+    currentTime: 1654887719,
+    sunrise: 1654865230,
+    sunset: 1654918121,
     weatherDetails: [
       WeatherDetails(
           title: 'Feels like', icon: 'feels-like', value: '19', unit: 'ºC'),
@@ -41,6 +44,9 @@ const DUMMY_DAYS = [
     currentTemp: 23,
     tempMax: 28,
     tempMin: 20,
+    currentTime: 1654887719,
+    sunrise: 1654865230,
+    sunset: 1654918121,
     weatherDetails: [
       WeatherDetails(
           title: 'Feels like', icon: 'feels-like', value: '19', unit: 'ºC'),
@@ -68,6 +74,9 @@ const DUMMY_DAYS = [
     currentTemp: 23,
     tempMax: 27,
     tempMin: 20,
+    currentTime: 1654887719,
+    sunrise: 1654865230,
+    sunset: 1654918121,
     weatherDetails: [
       WeatherDetails(
           title: 'Feels like', icon: 'feels-like', value: '19', unit: 'ºC'),
@@ -95,6 +104,9 @@ const DUMMY_DAYS = [
     currentTemp: 23,
     tempMax: 26,
     tempMin: 20,
+    currentTime: 1654887719,
+    sunrise: 1654865230,
+    sunset: 1654918121,
     weatherDetails: [
       WeatherDetails(
           title: 'Feels like', icon: 'feels-like', value: '19', unit: 'ºC'),
@@ -122,6 +134,9 @@ const DUMMY_DAYS = [
     currentTemp: 23,
     tempMax: 25,
     tempMin: 19,
+    currentTime: 1654887719,
+    sunrise: 1654865230,
+    sunset: 1654918121,
     weatherDetails: [
       WeatherDetails(
           title: 'Feels like', icon: 'feels-like', value: '19', unit: 'ºC'),
@@ -149,6 +164,9 @@ const DUMMY_DAYS = [
     currentTemp: 23,
     tempMax: 24,
     tempMin: 18,
+    currentTime: 1654887719,
+    sunrise: 1654865230,
+    sunset: 1654918121,
     weatherDetails: [
       WeatherDetails(
           title: 'Feels like', icon: 'feels-like', value: '19', unit: 'ºC'),
@@ -176,6 +194,9 @@ const DUMMY_DAYS = [
     currentTemp: 23,
     tempMax: 22,
     tempMin: 16,
+    currentTime: 1654887719,
+    sunrise: 1654865230,
+    sunset: 1654918121,
     weatherDetails: [
       WeatherDetails(
           title: 'Feels like', icon: 'feels-like', value: '19', unit: 'ºC'),

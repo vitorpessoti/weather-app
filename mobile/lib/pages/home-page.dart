@@ -43,7 +43,10 @@ class _HomePageState extends State<HomePage> {
             child: CircularProgressIndicator(),
           )
         : Scaffold(
-            backgroundColor: Colors.blue.shade400,
+            backgroundColor: weatherProvider.today!.currentTime >
+                    weatherProvider.today!.sunset
+                ? Colors.grey.shade900
+                : Colors.blue.shade400,
             body: CustomScrollView(
               slivers: [
                 WeatherSliverBar(

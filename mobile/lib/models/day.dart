@@ -9,6 +9,9 @@ class Day {
   final int currentTemp;
   final int tempMax;
   final int tempMin;
+  final int currentTime;
+  final int sunrise;
+  final int sunset;
   // final double precipitation;
   // final int wind;
   // final int pressure;
@@ -26,6 +29,9 @@ class Day {
     required this.currentTemp,
     required this.tempMax,
     required this.tempMin,
+    required this.currentTime,
+    required this.sunrise,
+    required this.sunset,
     // required this.precipitation,
     // required this.wind,
     // required this.pressure,
