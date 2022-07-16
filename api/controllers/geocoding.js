@@ -67,7 +67,7 @@ const latLong = async (req, res) => {
             data: data.data,
             count: data.metadata.totalCount,
         }
-
+        
         return res.status(200).json({
             status: true,
             message: 'Request successfully.',
@@ -76,7 +76,7 @@ const latLong = async (req, res) => {
     } catch (error) {
         return res.status(400).json({
             status: false,
-            message: 'An error has occurred.',
+            message: `We were unable to detect your location. Try typing it in next.`,
             item: error
         })
     }
