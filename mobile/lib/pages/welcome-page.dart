@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:location/location.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/pages/home-page.dart';
@@ -26,18 +27,50 @@ class _WelcomePageState extends State<WelcomePage> {
     try {
       final locData = await Location().getLocation();
 
-      await citiesProvider.getCitiesByLatLong(
-          locData.latitude!, locData.longitude!);
+      Map currentCityResponse = await citiesProvider.getCitiesByLatLong(
+        locData.latitude!,
+        locData.longitude!,
+      );
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomePage(city: citiesProvider.items.first),
+      if (currentCityResponse['status']) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomePage(city: citiesProvider.items.first),
+          ),
+        );
+      } else {
+        await showDialog<void>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(currentCityResponse['message']),
+            content: Text(currentCityResponse['item'].toString()),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text('OK'),
+              )
+            ],
+          ),
+        );
+      }
+    } catch (error) {
+      Map<String, dynamic> errorObject = jsonDecode(jsonEncode(error));
+
+      await showDialog<void>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text(errorObject['message']),
+          content: Text(errorObject['item']),
+          actions: [
+            TextButton(
+              onPressed: () =>
+                  Navigator.of(context).pushNamed(AppRoutes.SEARCH_PAGE),
+              child: Text('OK'),
+            )
+          ],
         ),
       );
-    } catch (error) {
-      print(error);
-      Navigator.of(context).pushNamed(AppRoutes.SEARCH_PAGE);
     }
   }
 

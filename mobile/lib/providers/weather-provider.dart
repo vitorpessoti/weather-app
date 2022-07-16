@@ -39,7 +39,7 @@ class WeatherProvider with ChangeNotifier {
   ];
   final String _baseUrl = '${Defs.API_URL}:${Defs.API_PORT}';
 
-  Future<void> getForecast(double latitude, double longitude) async {
+  Future<Map> getForecast(double latitude, double longitude) async {
     _items.clear();
     _dailyForecast.clear();
     _hourlyForecast.clear();
@@ -47,19 +47,19 @@ class WeatherProvider with ChangeNotifier {
       'Content-Type': 'application/json; charset=UTF-8',
     };
 
-    try {
-      final response = await http.post(
-        Uri.parse('${_baseUrl}/onecall'),
-        headers: requestHeaders,
-        body: jsonEncode({
-          'latitude': latitude,
-          'longitude': longitude,
-          'units': 'metric',
-        }),
-      );
+    final response = await http.post(
+      Uri.parse('${_baseUrl}/onecall'),
+      headers: requestHeaders,
+      body: jsonEncode({
+        'latitude': latitude,
+        'longitude': longitude,
+        'units': 'metric',
+      }),
+    );
 
-      Map<String, dynamic> responseData = jsonDecode(response.body);
+    Map<String, dynamic> responseData = jsonDecode(response.body);
 
+    if (responseData['status']) {
       today = new Day(
         month: 6,
         day: 2,
@@ -151,10 +151,11 @@ class WeatherProvider with ChangeNotifier {
           windSpeed: element['wind_speed'].toInt(),
         ));
       });
-
-      notifyListeners();
-    } catch (error) {
-      print('The error: ${error}');
+    } else {
+      throw responseData;
     }
+
+    notifyListeners();
+    return responseData;
   }
 }

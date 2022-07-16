@@ -21,22 +21,21 @@ class CitiesProvider with ChangeNotifier {
   List<City> get items => [..._items];
   final String _baseUrl = '${Defs.API_URL}:${Defs.API_PORT}';
 
-  Future<void> getCitiesByNamePrefix(String namePrefix) async {
+  Future<Map> getCitiesByNamePrefix(String namePrefix) async {
     _items.clear();
     Map<String, String> requestHeaders = {
       'Content-Type': 'application/json; charset=UTF-8',
     };
 
-    try {
-      final response = await http.post(
-        Uri.parse('${_baseUrl}/geocoding/namePrefix'),
-        headers: requestHeaders,
-        body: jsonEncode({"cityPrefix": namePrefix}),
-      );
+    final response = await http.post(
+      Uri.parse('${_baseUrl}/geocoding/namePrefix'),
+      headers: requestHeaders,
+      body: jsonEncode({"cityPrefix": namePrefix}),
+    );
 
-      Map<String, dynamic> responseData = jsonDecode(response.body);
+    Map<String, dynamic> responseData = jsonDecode(response.body);
 
-      print('getCitiesByNamePrefix');
+    if (responseData['status']) {
       responseData['item']['data'].forEach((element) {
         _items.add(
           City(
@@ -54,31 +53,31 @@ class CitiesProvider with ChangeNotifier {
           ),
         );
       });
-
-      notifyListeners();
-    } catch (error) {
-      print('The error: ${error}');
+    } else {
+      throw responseData;
     }
+
+    notifyListeners();
+    return responseData;
   }
 
-  Future<void> getCitiesByLatLong(double latitude, double longitude) async {
+  Future<Map> getCitiesByLatLong(double latitude, double longitude) async {
     Map<String, String> requestHeaders = {
       'Content-Type': 'application/json; charset=UTF-8',
     };
 
-    try {
-      final response = await http.post(
-        Uri.parse('${_baseUrl}/geocoding/latLong'),
-        headers: requestHeaders,
-        body: jsonEncode({
-          "latitude": latitude,
-          "longitude": longitude,
-        }),
-      );
+    final response = await http.post(
+      Uri.parse('${_baseUrl}/geocoding/latLong'),
+      headers: requestHeaders,
+      body: jsonEncode({
+        "latitude": latitude,
+        "longitude": longitude,
+      }),
+    );
 
-      Map<String, dynamic> responseData = jsonDecode(response.body);
+    Map responseData = jsonDecode(response.body);
 
-      print('getCitiesByLatLong');
+    if (responseData['status']) {
       responseData['item']['data'].forEach((element) {
         _items.add(
           City(
@@ -96,11 +95,12 @@ class CitiesProvider with ChangeNotifier {
           ),
         );
       });
-
-      notifyListeners();
-    } catch (error) {
-      print('The error: ${error}');
+    } else {
+      throw responseData;
     }
+
+    notifyListeners();
+    return responseData;
   }
 
   void clearCities() {

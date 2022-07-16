@@ -3,7 +3,6 @@ import 'package:mobile/components/hourly-forecast-details-item.dart';
 import 'package:mobile/components/subtitles.dart';
 import 'package:mobile/data/dummy-data.dart';
 import 'package:mobile/models/day.dart';
-import 'package:mobile/models/hour.dart';
 
 class DailyForecastDetailsPage extends StatelessWidget {
   final Day item;

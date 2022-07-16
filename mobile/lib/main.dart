@@ -1,5 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-// import 'package:mobile/pages/home-page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:mobile/pages/search-places-page.dart';
 import 'package:mobile/pages/welcome-page.dart';
 import 'package:mobile/providers/cities-provider.dart';
@@ -8,6 +9,10 @@ import 'package:mobile/utils/app-routes.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
+    if (kReleaseMode) exit(1);
+  };
   runApp(WeatherApp());
 }
 
