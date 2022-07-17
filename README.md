@@ -3,6 +3,9 @@
  
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=DEVELOPMENT&color=GREEN&style=for-the-badge)
 
+## Languages
+ - English version of docs is available [here](https://github.com/vitorpessoti/weather-app/blob/main/README_ENG.md)
+
 
 ## :bulb: Introdução
 Uma aplicação que fornece informações do clima em tempo real de acordo com a localização atual do usuário ou de uma localização específica informando o nome do local.
