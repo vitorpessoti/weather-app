@@ -4,26 +4,26 @@
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=DEVELOPMENT&color=GREEN&style=for-the-badge)
 
 
-## :bulb: Introduction
-An application that provides real-time weather information according to the user's current location or a specific location by informing the name of the location.
-First, a mobile application will be developed, using Flutter. Later, a web application will be developed, using Vuejs.
+## :bulb: Introdução
+Uma aplicação que fornece informações do clima em tempo real de acordo com a localização atual do usuário ou de uma localização específica informando o nome do local.
+Primeiramente, uma aplicação mobile será desenvolvida utilizando Flutter. Posteriormente, será desenvolvida uma aplicação web.
 
-## :hammer: Project features
-The app asks for permission to access the current location. If the permission is not granted, the user informs which city he would like to search. If the permission is granted, the app will return weather information for the user's current location.
+## :hammer: Características do projeto
+A aplicação solicita permissão para acessar a localização do usuário. Se a permissão não for concedida, o usuário deve informar qual cidade gostaria de pesquisar. Se a permissão for concedida, o app irá retornar as informações de clima para a localização atual do usuário.
 
-After selecting the location, the app will display the following information:
+Depois de selecionar a localização, a aplicação irá mostrar as seguintes informações:
 
- - Location name
- - Current temperature
- - Current date, maximum and minimum temperature for the current day
- - Hourly forecast
- - Daily forecast
- - Additional details about the current weather
+ - Nome do local
+ - Temperatura atual
+ - Data atual, temperaturas máxima e mínima para o dia atual
+ - Previsão por hora
+ - Previsão por dia
+ - Informações adicionais sobre o clima atual
+ 
+Caso o usuário queira pesquisar outra localização, há um botão de busca no canto superior direito da tela.
 
-In case the user wants to search for another location, there is a search option in the upper right corner.
+## 📁 Como acessar o projeto
+Você pode clonar o projeto ou baixar o zip [aqui](https://github.com/vitorpessoti/weather-app/archive/refs/heads/main.zip).
 
-## 📁 How to access the project
-You can clone the project or download [here](https://github.com/vitorpessoti/weather-app/archive/refs/heads/main.zip).
-
-## 🛠️ Run the project
-:construction: This section is under construction :construction:
+## 🛠️ Rodar o projeto
+:construction: Esta seção está em construção :construction:
